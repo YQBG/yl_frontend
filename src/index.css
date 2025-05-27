@@ -1,0 +1,153 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f0f2f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+}
+
+/* 确保表单输入框可交互 */
+.interactive-form .ant-input {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.interactive-form .ant-input:hover,
+.interactive-form .ant-input:focus {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+}
+
+.interactive-form .ant-form-item-label > label {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 确保表单可点击和聚焦 */
+.interactive-form input,
+.interactive-form select,
+.interactive-form textarea,
+.interactive-form button {
+  pointer-events: auto !important;
+}
+
+/* 确保没有透明元素覆盖表单 */
+.interactive-form .ant-row,
+.interactive-form .ant-col,
+.interactive-form .ant-form-item {
+  position: relative;
+  z-index: 5;
+}
+
+/* 文件上传组件的交互样式 */
+.interactive-form .ant-upload,
+.interactive-form .ant-upload-list {
+  pointer-events: auto !important;
+}
+
+.interactive-form .ant-btn {
+  pointer-events: auto !important;
+  z-index: 1000;
+  position: relative;
+}
+
+.interactive-form .ant-select {
+  pointer-events: auto !important;
+  color: white !important;
+}
+
+.interactive-form .ant-select-selector {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.interactive-form .ant-steps-item {
+  pointer-events: auto !important;
+}
+
+/* 确保表格可交互 */
+.interactive-form .ant-table-wrapper {
+  pointer-events: auto !important;
+}
+
+.interactive-form .ant-card {
+  z-index: 5;
+  position: relative;
+}
+
+/* 确保所有可点击元素激活交互 */
+.interactive-form * {
+  pointer-events: auto;
+}
+
+/* 确保特定交互元素在高层级 */
+.interactive-form .ant-upload,
+.interactive-form .ant-btn,
+.interactive-form .ant-select,
+.interactive-form .ant-table,
+.interactive-form .ant-pagination {
+  z-index: 1000;
+  position: relative;
+}
+
+/* 添加特定样式解决覆盖层问题 */
+.clickable-button {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 2000 !important;
+  position: relative !important;
+}
+
+.active-upload .ant-upload {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 2000 !important;
+}
+
+/* 解决潜在的覆盖层问题 */
+body::before {
+  content: none !important;
+}
+
+body::after {
+  content: none !important;
+}
+
+/* 修复可能的overlay问题 */
+.ant-layout::before,
+.ant-layout::after,
+.tech-container::before,
+.tech-container::after {
+  content: none !important;
+  display: none !important;
+}
